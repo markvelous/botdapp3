@@ -20,6 +20,7 @@ When all the tests have passed,
 
 Access the app on http://localhost:3000
 
+
 ![github-small](src/home.png)
 
 ## `Try it!`
