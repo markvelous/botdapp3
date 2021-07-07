@@ -1,4 +1,4 @@
-# Marköbot Infinite NFT Minter
+# Marköbot Infinite Robot Minter
 
 P7210027 Mark Tan SGBT4 Blockchain Beginner Course Project
 
@@ -19,6 +19,7 @@ When all the tests have passed,
 ### `npm run start`
 
 Access the app on http://localhost:3000
+
 ![github-small](src/home.png)
 
 ## `Try it!`
