@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
-import Color from '../abis/Color.json'
+import Bot from '../abis/Bot.json'
 
 class App extends Component {
+
+  // let botImage = ['https://robohash.org/' + this.state.bot + '?size=200x200'];
 
   async componentWillMount() {
     await this.loadWeb3()
@@ -19,7 +21,7 @@ class App extends Component {
       window.web3 = new Web3(window.web3.currentProvider)
     }
     else {
-      window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+      window.alert('Non-Ethereum browser detected. Try installing MetaMask instead.')
     }
   }
 
@@ -30,19 +32,19 @@ class App extends Component {
     this.setState({ account: accounts[0] })
 
     const networkId = await web3.eth.net.getId()
-    const networkData = Color.networks[networkId]
+    const networkData = Bot.networks[networkId]
     if(networkData) {
-      const abi = Color.abi
+      const abi = Bot.abi
       const address = networkData.address
       const contract = new web3.eth.Contract(abi, address)
       this.setState({ contract })
       const totalSupply = await contract.methods.totalSupply().call()
       this.setState({ totalSupply })
-      // Load Colors
+      // Load Bots
       for (var i = 1; i <= totalSupply; i++) {
-        const color = await contract.methods.colors(i - 1).call()
+        const bot = await contract.methods.bots(i - 1).call()
         this.setState({
-          colors: [...this.state.colors, color]
+          bots: [...this.state.bots, bot]
         })
       }
     } else {
@@ -50,11 +52,11 @@ class App extends Component {
     }
   }
 
-  mint = (color) => {
-    this.state.contract.methods.mint(color).send({ from: this.state.account })
+  mint = (bot) => {
+    this.state.contract.methods.mint(bot).send({ from: this.state.account })
     .once('receipt', (receipt) => {
       this.setState({
-        colors: [...this.state.colors, color]
+        bots: [...this.state.bots, bot]
       })
     })
   }
@@ -65,25 +67,25 @@ class App extends Component {
       account: '',
       contract: null,
       totalSupply: 0,
-      colors: []
+      bots: []
     }
   }
 
   render() {
     return (
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-2 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
+            href="https://robohash.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Color Tokens
+            Marköbot Infinite Robot Minter
           </a>
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small className="text-white"><span id="account">{this.state.account}</span></small>
+              <small className="text-white"><span id="account">{ this.state.account }</span></small>
             </li>
           </ul>
         </nav>
@@ -91,22 +93,23 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                <h1>Issue Token</h1>
+                <br/>
+                <h1>Mint a Marköbot</h1>
                 <form onSubmit={(event) => {
                   event.preventDefault()
-                  const color = this.color.value
-                  this.mint(color)
+                  const bot = this.bot.value
+                  this.mint(bot)
                 }}>
                   <input
                     type='text'
                     className='form-control mb-1'
-                    placeholder='e.g. #FFFFFF'
-                    ref={(input) => { this.color = input }}
+                    placeholder='e.g. Marköbot'
+                    ref={(input) => { this.bot = input }}
                   />
                   <input
                     type='submit'
                     className='btn btn-block btn-primary'
-                    value='MINT'
+                    value='Mint now!'
                   />
                 </form>
               </div>
@@ -114,11 +117,12 @@ class App extends Component {
           </div>
           <hr/>
           <div className="row text-center">
-            { this.state.colors.map((color, key) => {
+            { this.state.bots.map((bot, key) => {
               return(
-                <div key={key} className="col-md-3 mb-3">
-                  <div className="token" style={{ backgroundColor: color }}></div>
-                  <div>{color}</div>
+                <div key={key} className="col-md-2 mb-3">
+                  <div className="botname">{bot}</div>
+                  <div className="token"><img src="https://robohash.org/{bot}?size=150x150" alt="" /></div>
+                  <br/><br/><br/>
                 </div>
               )
             })}

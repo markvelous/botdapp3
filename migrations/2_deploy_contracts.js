@@ -1,5 +1,5 @@
-const Color = artifacts.require("Color");
+const Bot = artifacts.require("Bot");
 
 module.exports = function(deployer) {
-  deployer.deploy(Color);
+  deployer.deploy(Bot);
 };
