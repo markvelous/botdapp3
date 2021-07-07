@@ -121,7 +121,7 @@ class App extends Component {
               return(
                 <div key={key} className="col-md-2 mb-3">
                   <div className="botname">{bot}</div>
-                  <div className="token"><img src="https://robohash.org/{bot}?size=150x150" alt="" /></div>
+                  <div className="token"><img src={'https://robohash.org/' + bot + '?size=150x150'} alt="" /></div>
                   <br/><br/><br/>
                 </div>
               )
