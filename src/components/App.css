@@ -3,6 +3,7 @@
 .token {
   height: 150px;
   width: 150px;
+  background-color: pink;
   border-radius: 50%;
   display: inline-block;
 }
