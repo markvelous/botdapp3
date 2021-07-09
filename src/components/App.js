@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
 import Bot from '../abis/Bot.json'
+import Truncate from 'react-truncate';
 
 class App extends Component {
 
@@ -120,7 +121,7 @@ class App extends Component {
             { this.state.bots.map((bot, key) => {
               return(
                 <div key={key} className="col-md-2 mb-3">
-                  <div className="botname">- {bot} -</div>
+                  <div className="botname"><Truncate lines={1}>- {bot} -</Truncate></div>
                   <div className="token"><img src={'https://robohash.org/' + bot + '?size=150x150'} alt="" /></div>
                   <br/><br/><br/>
                 </div>
