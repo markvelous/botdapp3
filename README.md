@@ -20,6 +20,14 @@ When all the tests have passed,
 
 Access the app on http://localhost:3000
 
+For deployment to Rinkeby connected through Alchemy, create a secrets.json file on main directory with the following codes
+
+    {
+    "mnemonic": "mango school covid ....",
+    "projectId": "Alchemy project ID"
+    }
+
+Don't forget to add file to .gitignore
 
 ![github-small](src/home.png)
 

@@ -1,9 +1,9 @@
 require('babel-register');
 require('babel-polyfill');
-require('dotenv').config();
 
-// const { projectId, mnemonic } = require('./secrets.json');
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+// For linking to Rinkeby
+const { projectId, mnemonic } = require('./secrets.json');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   networks: {
@@ -12,6 +12,17 @@ module.exports = {
       port: 7545,
       network_id: "*" // Match any network id
     },
+    
+    rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, `https://eth-rinkeby.alchemyapi.io/v2/${projectId}`),
+      network_id: 4,
+      gas: 4500000,
+      gasPrice: 10000000000,
+      confirmations: 2,   
+      timeoutBlocks: 200,
+      skipDryRun: true
+      },
+      
   },
 
   contracts_directory: './src/contracts/',
@@ -25,14 +36,3 @@ module.exports = {
     }
   }
 };
-
-/*
-    rinkeby: {
-    provider: () => new HDWalletProvider(mnemonic, `https://eth-rinkeby.alchemyapi.io/v2/${projectId}`),
-    network_id: 4,
-    gas: 4500000,
-    confirmations: 2,   
-    timeoutBlocks: 200,
-    skipDryRun: true
-    },
-  */
