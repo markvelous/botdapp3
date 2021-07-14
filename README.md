@@ -31,4 +31,4 @@ Don't forget to add file to .gitignore
 
 ![github-small](src/home.png)
 
-## `Try it!`
+## `Have fun minting your unique Marköbots!`

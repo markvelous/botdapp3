@@ -81,14 +81,23 @@ class App extends Component {
             href="https://robohash.org/"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            Marköbot Infinite Robot Minter
+          >Marköbot Infinite Robot Minter
           </a>
+         
+          <a 
+            className="navbar-brand col-sm-3 col-md-2 mr-0"
+            href="https://rinkeby.etherscan.io/address/0xB7d67fa0B552105c3Bcc7e15374Ea26B67A3b5A6"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >Rinkeby Contract: 0xB7d67fa0B552 ...
+          </a>
+
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small className="text-white"><span id="account">{ this.state.account }</span></small>
+              <small className="text-white"><span id="account">Account: { this.state.account }</span></small>
             </li>
           </ul>
+
         </nav>
         <div className="container-fluid mt-5">
           <div className="row">
