@@ -75,7 +75,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-2 shadow">
+        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
             href="https://robohash.org/"
@@ -89,7 +89,7 @@ class App extends Component {
             href="https://rinkeby.etherscan.io/address/0xB7d67fa0B552105c3Bcc7e15374Ea26B67A3b5A6"
             target="_blank" 
             rel="noopener noreferrer"
-          >Rinkeby Contract: 0xB7d67fa0B552 ...
+          >Rinkeby Contract: 0xB7d67fa0B552105 ...
           </a>
 
           <ul className="navbar-nav px-3">
@@ -103,7 +103,7 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                <br/>
+                <br/><br/>
                 <h1>Mint a Marköbot</h1>
                 <form onSubmit={(event) => {
                   event.preventDefault()
@@ -113,9 +113,10 @@ class App extends Component {
                   <input
                     type='text'
                     className='form-control mb-1'
-                    placeholder='e.g. Marköbot'
+                    placeholder='Enter the name of your bot'
                     ref={(input) => { this.bot = input }}
                   />
+                  <br />
                   <input
                     type='submit'
                     className='btn btn-block btn-primary'
@@ -125,7 +126,7 @@ class App extends Component {
               </div>
             </main>
           </div>
-          <hr/>
+          <hr/><br />
           <div className="row text-center">
             { this.state.bots.map((bot, key) => {
               return(
