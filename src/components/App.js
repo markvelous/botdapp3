@@ -3,6 +3,7 @@ import Web3 from 'web3'
 import './App.css';
 import Bot from '../abis/Bot.json'
 import Truncate from 'react-truncate';
+import randomstring from 'randomstring';
 
 class App extends Component {
 
@@ -77,19 +78,18 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 shadow">
           <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
+            className="navbar-brand col-sm-3 col-md-3 mr-0"
             href="https://robohash.org/"
             target="_blank"
             rel="noopener noreferrer"
-          >Marköbot Infinite Robot Minter
+          >Marköbot Unique Robohash Minter
           </a>
-         
-          <a 
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="https://rinkeby.etherscan.io/address/0xB7d67fa0B552105c3Bcc7e15374Ea26B67A3b5A6"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >Rinkeby Contract: 0xB7d67fa0B552105 ...
+
+          <a className="small text-white"
+              href="https://rinkeby.etherscan.io/address/0xB7d67fa0B552105c3Bcc7e15374Ea26B67A3b5A6"
+              target="_blank" 
+              rel="noopener noreferrer"
+              >Contract: 0xB7d67fa0B552105c3Bcc7e15374Ea26B67A3b5A6
           </a>
 
           <ul className="navbar-nav px-3">
@@ -122,8 +122,25 @@ class App extends Component {
                     className='btn btn-block btn-primary'
                     value='Mint now!'
                   />
+                  <br />
+
+                  <div className="content mr-auto ml-auto">
+                    <form onSubmit={(event) => {
+                      event.preventDefault()
+                      const bot = randomstring.generate()
+                      this.mint(bot)
+                    }}>
+                    <input
+                      type='submit'
+                      className='btn btn-block btn-primary'
+                      value='Surprise me!'
+                    />
+                    </form>
+                  </div>
+
                 </form>
               </div>
+
             </main>
           </div>
           <hr/><br />
@@ -131,7 +148,7 @@ class App extends Component {
             { this.state.bots.map((bot, key) => {
               return(
                 <div key={key} className="col-md-2 mb-3">
-                  <div className="botname"><Truncate lines={1}>- {bot} -</Truncate></div>
+                  <div className="botname"><Truncate lines={1}>~ {bot} ~</Truncate></div><br />
                   <div className="token"><img src={'https://robohash.org/' + bot + '?size=150x150'} alt="" /></div>
                   <br/><br/><br/>
                 </div>
