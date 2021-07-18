@@ -14,6 +14,7 @@ Set up custom server at 7545 (check Ganache)
 
 ### `truffle test`
 
+Ensure Ganache is running
 When all the tests have passed, 
 
 ### `npm run start`
