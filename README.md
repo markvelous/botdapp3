@@ -1,4 +1,4 @@
-# Marköbot Infinite Robot Minter
+# Marköbot Unique Robohash Minter
 
 P7210027 Mark Tan SGBT4 Blockchain Beginner Course Project
 
