@@ -106,6 +106,7 @@ class App extends Component {
         </nav>
         <div className="container-fluid mt-5">
           <div className="row">
+
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
                 <br />
@@ -131,28 +132,28 @@ class App extends Component {
                     className="btn btn-block btn-primary"
                     value="Mint now!"
                   />
-                  <br />
-
-                  <div className="content mr-auto ml-auto">
-                    <form
-                      onSubmit={(event) => {
-                        event.preventDefault();
-                        const bot = randomstring.generate();
-                        this.mint(bot);
-                      }}
-                    >
-                      <input
-                        type="submit"
-                        className="btn btn-block btn-primary"
-                        value="Surprise me! Make a random bot!"
-                      />
-                    </form>
-                  </div>
-                  
+                  <br/>
                 </form>
-                <br />
               </div>
             </main>
+
+            <div className="content mr-auto ml-auto">
+              <form
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  const bot = randomstring.generate();
+                  this.mint(bot);
+                }}
+              >
+                <input
+                  type="submit"
+                  className="btn btn-block btn-primary"
+                  value="       Surprise me with a random bot!       "
+                />
+              </form>
+              <br/>
+            </div>
+
           </div>
           <hr />
           <br />
