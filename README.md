@@ -31,4 +31,12 @@ Don't forget to add file to .gitignore
 
 ![github-small](src/home.png)
 
+
+## Dependencies
+
+
+### `npm install randomstring`
+### `npm install react-truncate`
+
+
 ## `Have fun minting your unique Marköbots!`
