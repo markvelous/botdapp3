@@ -4,7 +4,6 @@ import "./App.css";
 import Bot from "../abis/Bot.json";
 import Truncate from "react-truncate";
 import randomstring from "randomstring";
-
 class App extends Component {
   // let botImage = ['https://robohash.org/' + this.state.bot + '?size=200x200'];
 
