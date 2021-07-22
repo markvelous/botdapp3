@@ -5,6 +5,7 @@ import Bot from "../abis/Bot.json";
 import Truncate from "react-truncate";
 import randomstring from "randomstring";
 class App extends Component {
+  
   // let botImage = ['https://robohash.org/' + this.state.bot + '?size=200x200'];
 
   async componentWillMount() {
@@ -128,7 +129,7 @@ class App extends Component {
                   />
                   <input
                     type="submit"
-                    className="btn btn-block btn-primary"
+                    className="btn btn-block btn-success"
                     value="Mint now!"
                   />
                   <br/>
@@ -146,7 +147,7 @@ class App extends Component {
               >
                 <input
                   type="submit"
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block btn-outline-danger"
                   value="       Surprise me with a random bot!       "
                 />
               </form>
