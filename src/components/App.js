@@ -185,3 +185,5 @@ class App extends Component {
 }
 
 export default App;
+
+// randomised string {Math.random().toString(36).replace(/[^\w]+/g, '').substr(0, 5)}
