@@ -77,6 +77,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-3 mr-0"
@@ -87,7 +88,14 @@ class App extends Component {
             Marköbot Unique Robohash Minter
           </a>
 
-          <a
+          <ul className="navbar-nav px-2">
+            <li className="nav-item text-nowrap d-sm-none d-sm-block">
+              <small className="text-white">
+                <span id="account">Account: {this.state.account}</span>
+              </small>
+            </li>
+            <li>
+            <a
             className="small text-white"
             href="https://rinkeby.etherscan.io/address/0xB7d67fa0B552105c3Bcc7e15374Ea26B67A3b5A6"
             target="_blank"
@@ -95,12 +103,6 @@ class App extends Component {
           >
             Contract: 0xB7d67fa0B552105c3Bcc7e15374Ea26B67A3b5A6
           </a>
-
-          <ul className="navbar-nav px-3">
-            <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small className="text-white">
-                <span id="account">Account: {this.state.account}</span>
-              </small>
             </li>
           </ul>
         </nav>
@@ -121,7 +123,7 @@ class App extends Component {
                 >
                   <input
                     type="text"
-                    className="form-control mb-1"
+                    className="form-control mb-3"
                     placeholder="Enter the name of your bot"
                     ref={(input) => {
                       this.bot = input;
@@ -129,7 +131,7 @@ class App extends Component {
                   />
                   <input
                     type="submit"
-                    className="btn btn-block btn-success"
+                    className="btn btn-block btn-success shadow-lg"
                     value="Mint now!"
                   />
                   <br/>
@@ -147,7 +149,7 @@ class App extends Component {
               >
                 <input
                   type="submit"
-                  className="btn btn-block btn-outline-danger"
+                  className="btn btn-block btn-outline-danger shadow-md"
                   value="       Surprise me with a random bot!       "
                 />
               </form>
