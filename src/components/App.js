@@ -110,7 +110,7 @@ class App extends Component {
           <div className="row">
 
             <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
+              <div className="content mr-auto ml-auto mt-5">
                 <br />
                 <br />
                 <h1>Mint a Marköbot</h1>
@@ -169,7 +169,7 @@ class App extends Component {
                   <br />
                   <div className="token">
                     <img
-                      src={"https://robohash.org/" + bot + "?size=150x150"}
+                      src={"https://robohash.org/set_set1/" + bot + "?size=150x150"}
                       alt=""
                     />
                   </div>
@@ -189,3 +189,4 @@ class App extends Component {
 export default App;
 
 // randomised string {Math.random().toString(36).replace(/[^\w]+/g, '').substr(0, 5)}
+// https://robohash.org/set_set5/bgset_bg3/3.15yhhhhuu9?size=500x500
